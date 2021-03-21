@@ -4,25 +4,22 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    htmlAttrs: {
-      dir: 'rtl',
-      lang: 'fa-IR',
-      prefix: 'og: http://ogp.me/ns#',
-    },
-    title: 'aliii.ir',
+    title: 'aliii',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
+
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'css/basic.css' },
+      {
+        rel: 'stylesheet',
+        href: '/styles/font.css',
+      },
     ],
   },
-
   srcDir: 'src',
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -34,16 +31,16 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
@@ -56,7 +53,7 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'fa',
+      lang: 'en',
     },
   },
 
