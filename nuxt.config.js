@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'mycv',
     meta: [
-      { charset: 'utf-8'},
+      { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
@@ -55,4 +55,4 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-}
+};
