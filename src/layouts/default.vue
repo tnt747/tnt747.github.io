@@ -1,19 +1,5 @@
 <template>
   <div>
-    <div class="background gradient">
-      <ul class="bg-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
     <Nuxt />
   </div>
 </template>
@@ -42,8 +28,8 @@
   /* bg bubbles */
   .background.gradient {
     background: #50a3a2;
-    background: -webkit-linear-gradient(top left, #50a3a2 0%, #78cc6d 100%);
-    background: linear-gradient(to bottom right, #50a3a2 0%, #78cc6d 100%);
+    background: -webkit-linear-gradient(bottom left, #50a3a2 0%, #78cc6d 100%);
+    background: linear-gradient(to bottom left, #50a3a2 0%, #78cc6d 100%);
     position: fixed;
     overflow: hidden;
     top: 0;
