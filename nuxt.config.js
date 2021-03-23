@@ -17,11 +17,20 @@ export default {
         rel: 'stylesheet',
         href: '/styles/font.css',
       },
+      {
+        rel: 'stylesheet',
+        href: '/fonts/fontawesome/css/all.min.css',
+      },
     ],
   },
   srcDir: 'src',
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    {
+      lang: 'css',
+      src: 'animate.css/animate.min.css',
+    },
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
