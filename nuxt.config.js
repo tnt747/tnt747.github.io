@@ -33,7 +33,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/i18n.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -46,20 +46,45 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
   ],
-  // tailwindcss: {
-  //   jit: true,
-  // },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    'nuxt-i18n',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
-
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'انگلیسی',
+        dir: 'ltr',
+      },
+      {
+        code: 'fa',
+        name: 'فارسی',
+        dir: 'rtl',
+      },
+    ],
+    defaultLocale: 'fa',
+    defaultDirection: 'rtl',
+    vueI18nLoader: true,
+    vueI18n: {
+      fallbackLocale: 'fa',
+      messages: {
+        en: {
+          welcome: 'Welcome',
+        },
+        fa: {
+          welcome: 'Bienvenue',
+        },
+      },
+    },
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {

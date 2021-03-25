@@ -15,27 +15,61 @@
       </ul>
     </div>
     <div class="container mx-auto max-w-screen-xl h-4/6 relative flex">
-      <div :class="[' w-3/5 my-4 relative overflow-hidden', $style.innerCard]">
-        <transition
-          name="innerCardTransition"
-          enter-active-class="animate__animated animate__fadeInRight"
-          leave-active-class="animate__animated animate__fadeOutRight"
+      <div class="top-menu ml-2 z-30 top-4 relative w-20">
+        <a
+          :class="[$style.menuBtn]"
+          href=""
+          class="bg-white w-full px-2 py-8 text-center inline-block rounded hover:text-green-500 relative h-20"
         >
-          <div
-            v-if="aboutmeTab"
-            key="aboutme"
-            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute"
-          >
-            about me
-          </div>
-          <div
-            v-else-if="myResumeTab"
-            key="myresume"
-            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute"
-          >
-            my resume
-          </div>
-        </transition>
+          <span></span>
+        </a>
+        <ul
+          :class="[
+            'flex flex-col bg-white items-center rounded',
+            $style.topMenuUl,
+          ]"
+        >
+          <li class="px-2 py-4 text-center w-full relative">
+            <a
+              href=""
+              class="hover:text-green-500"
+              @click.prevent="tab = 'about-me'"
+            >
+              <i class="fa fa-user-tie"></i>
+              <small class="whitespace-nowrap block">درباره من</small>
+            </a>
+          </li>
+          <li class="px-2 py-4 text-center w-full relative">
+            <a
+              href=""
+              class="hover:text-green-500"
+              @click.prevent="tab = 'my-resume'"
+            >
+              <i class="fa fa-file-alt"></i>
+              <small class="whitespace-nowrap block"> رزومه من </small>
+            </a>
+          </li>
+          <li class="px-2 py-4 text-center w-full relative">
+            <a
+              href=""
+              class="hover:text-green-500"
+              @click.prevent="tab = 'my-works'"
+            >
+              <i class="fa fa-paint-brush"></i>
+              <small class="whitespace-nowrap block">کارهای من</small>
+            </a>
+          </li>
+          <li class="px-2 py-4 text-center w-full relative">
+            <a
+              href=""
+              class="hover:text-green-500"
+              @click.prevent="tab = 'cotact'"
+            >
+              <i class="far fa-at"></i>
+              <small class="whitespace-nowrap block">ارتباط با من</small>
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="relative w-2/5">
         <div
@@ -77,6 +111,14 @@
               <div
                 class="relative h-full flex-1 flex justify-center items-center"
               >
+                <a href="" class="text-center hover:text-green-500"> رزومه </a>
+              </div>
+              <div
+                :class="[
+                  'relative h-full flex-1 flex justify-center items-center',
+                  $style.gutterGradiant,
+                ]"
+              >
                 <a
                   href=""
                   class="text-center text-green-500 hover:text-green-700"
@@ -84,61 +126,190 @@
                   ارتباط داشته باشیم ؟
                 </a>
               </div>
-              <div
-                class="relative h-full flex-1 flex justify-center items-center"
-              >
-                <a href="" class="text-center hover:text-green-500"> رزومه </a>
-              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="top-menu ml-2 z-30 top-4 relative w-20">
-        <a
-          :class="[$style.menuBtn]"
-          href=""
-          class="bg-white w-full px-2 py-8 text-center inline-block rounded hover:text-green-500 relative h-20"
+
+      <div :class="[' w-3/5 my-4 relative overflow-hidden', $style.innerCard]">
+        <transition
+          name="innerCardTransition"
+          enter-active-class="animate__animated animate__fadeInRight"
+          leave-active-class="animate__animated animate__fadeOutRight"
         >
-          <span></span>
-        </a>
-        <ul
-          :class="[
-            'flex flex-col bg-white items-center rounded',
-            $style.topMenuUl,
-          ]"
-        >
-          <li class="px-2 py-4 text-center w-full relative">
-            <a
-              href=""
-              class="hover:text-green-500"
-              @click.prevent="tab = 'about-me'"
+          <div
+            v-if="aboutmeTab"
+            key="aboutme"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute"
+          >
+            <div :class="['text-start p-8 pb-0', $style.title]">
+              <span
+                :class="[
+                  'text-green-500 font-semibold inline-block mb-8 text-lg relative',
+                  $style.firstWord,
+                ]"
+              >
+                درباره
+              </span>
+              <span class="font-semibold text-lg"> من </span>
+            </div>
+            <div class="flex">
+              <div :class="['w-1/2 text-justify  p-8']">
+                <p class="text-gray-600">
+                  من علی اسماعیلی هستم. <br />
+                  یک فرانت‌اند دولوپر از ایران.
+                  <br />
+                  در حال حاضر در شرکت یکتانت مشغول به کار هستم.
+                </p>
+              </div>
+              <div :class="['w-1/2 p-8 relative', $style.gutterGradiant]">
+                <ul>
+                  <li
+                    :class="[
+                      'flex justify-between items-center py-2 relative',
+                      $style.centerEllipsisGradiantGutter,
+                    ]"
+                  >
+                    <small>
+                      <strong
+                        class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
+                      >
+                        سن
+                        <span>.....</span>
+                      </strong>
+                    </small>
+                    <span class="text-gray-600">سن فقط یه عدده:دی</span>
+                  </li>
+                  <li
+                    :class="[
+                      'flex justify-between items-center relative py-2 relative',
+                      $style.centerEllipsisGradiantGutter,
+                    ]"
+                  >
+                    <small>
+                      <strong
+                        class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
+                      >
+                        محل اقامت
+                        <span>.....</span>
+                      </strong>
+                    </small>
+                    <span class="text-gray-600">ایران</span>
+                  </li>
+                  <li
+                    :class="[
+                      'flex justify-between items-center relative py-2 relative',
+                      $style.centerEllipsisGradiantGutter,
+                    ]"
+                  >
+                    <small>
+                      <strong
+                        class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
+                      >
+                        وضعیت اشتغال
+                        <span>.....</span>
+                      </strong>
+                    </small>
+                    <span class="text-gray-600">مشغول به کار</span>
+                  </li>
+                  <li
+                    :class="['flex justify-between items-center relative py-2']"
+                  >
+                    <small>
+                      <strong
+                        class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
+                      >
+                        آدرس
+                        <span>.....</span>
+                      </strong>
+                    </small>
+                    <span class="text-gray-600">تهران</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            v-else-if="myResumeTab"
+            key="myresume"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute"
+          >
+            <div :class="['text-start p-8 pb-0', $style.title]">
+              <span
+                :class="[
+                  'text-green-500 font-semibold inline-block mb-8 text-lg relative',
+                  $style.firstWord,
+                ]"
+              >
+                رزومه
+              </span>
+              <span class="font-semibold text-lg"> کاری/شغلی </span>
+            </div>
+            <div
+              :class="[
+                'p-8 flex items-center justify-start relative',
+                $style.centerEllipsisGradiantGutter,
+              ]"
             >
-              <i class="fa fa-user-tie"></i>
-              <small class="whitespace-nowrap block">درباره من</small>
-            </a>
-          </li>
-          <li class="px-2 py-4 text-center w-full relative">
-            <a
-              href=""
-              class="hover:text-green-500"
-              @click.prevent="tab = 'my-resume'"
-            >
-              <i class="fa fa-book"></i>
-              <small class="whitespace-nowrap block">رزومه</small>
-            </a>
-          </li>
-          <li class="px-2 py-4 text-center w-full relative">
-            <a href="" class="hover:text-green-500">
-              <i class="fa fa-book"></i>
-              <small class="whitespace-nowrap block">کارهای من</small>
-            </a>
-          </li>
-        </ul>
+              <a
+                href="https://yektanet.com"
+                class="flex flex-col justify-center items-center ml-3"
+              >
+                <img
+                  src="/images/logo/yektanet.png"
+                  class="rounded w-8"
+                  alt="yektanet"
+                />
+                <span class="mt-2"> یکتانت </span>
+                <small> yektanet.com </small>
+              </a>
+              <p>
+                از سال ۹۵ وارد مجموعه یکتانت شدم و اولین کارهام رو مثل تقریباً
+                همه روی پروژه‌ای انجام دادم که هیچ‌وقت به مرحله Production
+                نرسید:دی. اون پروژه که اسمش
+                <strong> چطور پرو </strong>
+                بود یه پنل حرفه‌ای برای
+                <a href="https://chetor.com" class="text-green-500 underline">
+                  وبسایت چطور
+                </a>
+                بود.
+                <br />
+                بعد از اون همزمان کار روی پروژه‌های
+                <a href="https://najva.com" class="text-green-500 underline">
+                  نجوا
+                </a>
+                و
+                <a href="https://yektanet.com" class="text-green-500 underline">
+                  یکتانت
+                </a>
+                رو شروع کردیم و من هم عضو تیم اولیه این پروژه‌ها بودم و کدهای
+                اولیه این پروژه‌ها با جاوااسکریپت رو پیاده‌سازی کردم. <br />
+                بعد‌ترها پنل‌هامون رو که با jquery زده بودیم رو با vue بازنویسی
+                کردیم و کلی امکانات جذاب بهشون اضافه کردیم. <br />
+                پروژه‌های مختلفی مثل
+                <a href="https://triboon.net" class="text-green-500 underline">
+                  تریبون
+                </a>
+                و
+                <a href="https://jaryan.net" class="text-green-500 underline">
+                  جریان
+                </a>
+                و ... رو شروع کردیم و در حال حاضر روی پروژه تریبون کار می‌کنم.
+              </p>
+            </div>
+            <div class="bg-blue-100"></div>
+          </div>
+        </transition>
       </div>
     </div>
   </div>
 </template>
-
+<i18n lang="json">
+{
+  "en": {},
+  "fa": {}
+}
+</i18n>
 <script>
   export default {
     data() {
@@ -209,8 +380,68 @@
   };
 </script>
 <style module lang="scss">
+  @mixin gutterGradiant($ellipsis) {
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: radial-gradient(
+        ellipse at $ellipsis,
+        #ddd 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+    }
+  }
+  .centerEllipsisGradiantGutter {
+    @include gutterGradiant(center);
+  }
   .innerCard {
     height: calc(100% - 2rem);
+  }
+  .title {
+    .firstWord {
+      &::before {
+        position: absolute;
+        border-radius: 30px;
+        right: -17px;
+        top: 0;
+        background: -webkit-linear-gradient(
+          -45deg,
+          rgba(46, 202, 127, 0.15) 0%,
+          rgba(46, 202, 127, 0.01) 100%
+        );
+        width: 30px;
+        height: 28px;
+        content: '';
+      }
+    }
+    &::after {
+      right: -2rem;
+      position: relative;
+      content: '';
+      display: block;
+      height: 1px;
+      background: -moz-radial-gradient(
+        right,
+        ellipse cover,
+        #ddd 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      background: -webkit-radial-gradient(
+        right,
+        ellipse cover,
+        #ddd 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      background: radial-gradient(
+        ellipse at right,
+        #ddd 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+    }
   }
   .profileCard {
     position: relative;
@@ -256,22 +487,22 @@
       bottom: -70px;
     }
   }
-  .profileFooterButtons {
-    a:nth-child(1) {
-      &::before {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 1px;
-        height: 100%;
-        background: radial-gradient(
-          ellipse at top,
-          #ddd 0%,
-          rgba(255, 255, 255, 0) 70%
-        );
-      }
+  .gutterGradiant {
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: radial-gradient(
+        ellipse at top,
+        #ddd 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
     }
+  }
+  .profileFooterButtons {
     &::before {
       content: '';
       position: absolute;
@@ -286,6 +517,7 @@
       );
     }
   }
+
   .topMenuUl {
     li {
       &::after {
