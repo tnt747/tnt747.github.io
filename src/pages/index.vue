@@ -14,7 +14,9 @@
         <li></li>
       </ul>
     </div>
-    <div class="container mx-auto max-w-screen-xl h-4/6 relative flex">
+    <div
+      class="container mx-auto max-w-screen-xl md:max-w-screen-lg h-4/6 relative flex"
+    >
       <div class="top-menu ml-2 z-30 top-4 relative w-20">
         <a
           :class="[$style.menuBtn]"
@@ -147,7 +149,7 @@
           <div
             v-if="aboutmeTab"
             key="aboutme"
-            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute overflow-auto"
           >
             <div :class="['text-start p-8 pb-0', $style.title]">
               <span
@@ -161,7 +163,7 @@
               <span class="font-semibold text-lg"> من </span>
             </div>
             <div class="flex">
-              <div :class="['w-1/2 text-justify  p-8']">
+              <div :class="['w-1/2 text-justify p-8']">
                 <p class="text-gray-600">
                   من علی اسماعیلی هستم. <br />
                   یک فرانت‌اند دولوپر از ایران.
@@ -182,7 +184,6 @@
                         class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
                       >
                         سن
-                        <span>.....</span>
                       </strong>
                     </small>
                     <span class="text-gray-600">سن فقط یه عدده:دی</span>
@@ -198,7 +199,6 @@
                         class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
                       >
                         محل اقامت
-                        <span>.....</span>
                       </strong>
                     </small>
                     <span class="text-gray-600">ایران</span>
@@ -214,7 +214,6 @@
                         class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
                       >
                         وضعیت اشتغال
-                        <span>.....</span>
                       </strong>
                     </small>
                     <span class="text-gray-600">مشغول به کار</span>
@@ -227,7 +226,6 @@
                         class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
                       >
                         آدرس
-                        <span>.....</span>
                       </strong>
                     </small>
                     <span class="text-gray-600">تهران</span>
@@ -239,7 +237,7 @@
           <div
             v-else-if="myResumeTab"
             key="myresume"
-            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute overflow-auto"
           >
             <div :class="['text-start p-8 pb-0', $style.title]">
               <span
@@ -309,7 +307,7 @@
           <div
             v-else-if="contactTab"
             key="contact"
-            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute overflow-auto"
           >
             <div :class="['text-start p-8 pb-0', $style.title]">
               <span
@@ -332,7 +330,7 @@
           <div
             v-else-if="myWorksTab"
             key="my-works"
-            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute overflow-auto"
           >
             <div :class="['text-start p-8 pb-0', $style.title]">
               <span
