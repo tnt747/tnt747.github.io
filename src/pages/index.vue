@@ -87,7 +87,7 @@
           <div
             :class="['relative h-1/2 rounded', $style.profilePictureWrapper]"
           ></div>
-          <div class="mt-10 text-center font-bold text-2xl">
+          <div class="mt-8 text-center font-bold text-2xl">
             {{ title }}
           </div>
           <div class="mt-3 text-center text-green-500" style="min-height: 24px">
@@ -372,6 +372,10 @@
         title: 'علی اسماعیلی',
         subtitles,
         socials: [
+          {
+            network: 'telegram',
+            link: 'https://t.me/aesmaeili777/',
+          },
           {
             network: 'instagram',
             link: 'https://www.instagram.com/a.esmaeili/',
