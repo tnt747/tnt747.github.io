@@ -63,7 +63,7 @@
             <a
               href=""
               class="hover:text-green-500"
-              @click.prevent="tab = 'cotact'"
+              @click.prevent="tab = 'contact'"
             >
               <i class="far fa-at"></i>
               <small class="whitespace-nowrap block">ارتباط با من</small>
@@ -111,7 +111,13 @@
               <div
                 class="relative h-full flex-1 flex justify-center items-center"
               >
-                <a href="" class="text-center hover:text-green-500"> رزومه </a>
+                <a
+                  href=""
+                  class="text-center hover:text-green-500"
+                  @click.prevent="tab = 'my-resume'"
+                >
+                  رزومه
+                </a>
               </div>
               <div
                 :class="[
@@ -122,6 +128,7 @@
                 <a
                   href=""
                   class="text-center text-green-500 hover:text-green-700"
+                  @click.prevent="tab = 'contact'"
                 >
                   ارتباط داشته باشیم ؟
                 </a>
@@ -299,6 +306,49 @@
             </div>
             <div class="bg-blue-100"></div>
           </div>
+          <div
+            v-else-if="contactTab"
+            key="contact"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute"
+          >
+            <div :class="['text-start p-8 pb-0', $style.title]">
+              <span
+                :class="[
+                  'text-green-500 font-semibold inline-block mb-8 text-lg relative',
+                  $style.firstWord,
+                ]"
+              >
+                برای ارتباط با
+              </span>
+              <span class="font-semibold text-lg"> من </span>
+            </div>
+            <div class="p-8">
+              <p>
+                <i class="fa fa-phone"></i>
+                <span class="fanum">09202062826</span>
+              </p>
+            </div>
+          </div>
+          <div
+            v-else-if="myWorksTab"
+            key="my-works"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute"
+          >
+            <div :class="['text-start p-8 pb-0', $style.title]">
+              <span
+                :class="[
+                  'text-green-500 font-semibold inline-block mb-8 text-lg relative',
+                  $style.firstWord,
+                ]"
+              >
+                کارهای
+              </span>
+              <span class="font-semibold text-lg"> من </span>
+            </div>
+            <div class="p-8">
+              <p>به مرور کارهام رو اینجا قرار میدم.</p>
+            </div>
+          </div>
         </transition>
       </div>
     </div>
@@ -351,6 +401,12 @@
       },
       myResumeTab() {
         return this.tab === 'my-resume';
+      },
+      myWorksTab() {
+        return this.tab === 'my-works';
+      },
+      contactTab() {
+        return this.tab === 'contact';
       },
     },
     mounted() {
