@@ -325,6 +325,33 @@
                 <i class="fa fa-phone"></i>
                 <span class="fanum">09202062826</span>
               </p>
+              <form action="" method="post">
+                <h3>contact me</h3>
+                <input
+                  id=""
+                  type="email"
+                  name="email"
+                  placeholder="email"
+                  class="block border"
+                />
+                <input
+                  id=""
+                  type="text"
+                  name="subject"
+                  placeholder="subject"
+                  class="block border"
+                />
+                <textarea
+                  id=""
+                  name="message"
+                  class="border"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+                <button type="submit" class="block bg-green-500 rounded">
+                  send
+                </button>
+              </form>
             </div>
           </div>
           <div
@@ -345,6 +372,8 @@
             </div>
             <div class="p-8">
               <p>به مرور کارهام رو اینجا قرار میدم.</p>
+              <!-- <button type="submit" @click="formSubmitted">
+</button> -->
             </div>
           </div>
         </transition>
@@ -359,6 +388,7 @@
 }
 </i18n>
 <script>
+  import { init, send } from 'emailjs-com';
   export default {
     data() {
       const subtitles = [
@@ -411,10 +441,28 @@
         return this.tab === 'contact';
       },
     },
+    created() {
+      init('user_bx0uG9YG3zkCIJOTbjfgv');
+    },
     mounted() {
       this.typeCharacterByCharacter();
     },
     methods: {
+      formSubmitted() {
+        const templateParams = {
+          name: 'James',
+          message: 'Check this out!',
+          accessToken: '3c2e26b0d6f5931847db819770596d10',
+          subject: 'hey subject',
+          from_name: 'mammad',
+          from_email: 'mammad@gmail.com',
+        };
+        send('service_4f1wkk4', 'template_io22kod', templateParams)
+          .then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+          })
+          .catch((err) => console.error(err));
+      },
       typeCharacterByCharacter() {
         const word = this.subtitleTyping;
         const nextWord = this.subtitles[this.subtitleCounter];
