@@ -326,32 +326,74 @@
                 <span class="fanum">09202062826</span>
               </p>
               <form action="" method="post">
-                <h3>contact me</h3>
+                <h3 class="my-3 rounded p-3 bg-blue-100">
+                  می‌تونی برام یه پیام بفرستی تا از طریق ایمیل با هم در ارتباط
+                  باشیم.
+                </h3>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700"
+                >
+                  ایمیلت رو بنویس تا جواب بدم
+                </label>
                 <input
-                  id=""
+                  id="email"
+                  v-model="form.email"
                   type="email"
+                  required
                   name="email"
                   placeholder="email"
-                  class="block border"
+                  class="block rounded border w-full mb-3"
+                  dir="ltr"
                 />
+                <label
+                  for="subject"
+                  class="block text-sm font-medium text-gray-700"
+                >
+                  موضوع
+                </label>
                 <input
-                  id=""
+                  id="subject"
+                  v-model="form.subject"
                   type="text"
                   name="subject"
-                  placeholder="subject"
-                  class="block border"
+                  placeholder="موضوع"
+                  class="block border rounded w-full mb-3"
                 />
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700"
+                >
+                  متن پیام
+                </label>
                 <textarea
-                  id=""
+                  v-model="form.message"
+                  required
                   name="message"
-                  class="border"
+                  placeholder="پیامت رو اینجا بنویس"
+                  class="border rounded block w-full my-3"
                   cols="30"
-                  rows="10"
+                  rows="5"
                 ></textarea>
-                <button type="submit" class="block bg-green-500 rounded">
-                  send
+                <button
+                  class="block py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                  @click.prevent="formSubmitted"
+                >
+                  ارسال
                 </button>
               </form>
+              <transition
+                name="successMessage"
+                enter-active-class="animate__animated animate__fadeIn"
+                leave-active-class="animate__animated animate__fadeOut"
+              >
+                <div
+                  v-if="showSuccessMessage"
+                  class="bg-green-200 rounded p-4 mt-3"
+                >
+                  پیام شما با موفقیت ارسال شد.
+                </div>
+              </transition>
             </div>
           </div>
           <div
@@ -372,8 +414,6 @@
             </div>
             <div class="p-8">
               <p>به مرور کارهام رو اینجا قرار میدم.</p>
-              <!-- <button type="submit" @click="formSubmitted">
-</button> -->
             </div>
           </div>
         </transition>
@@ -398,6 +438,12 @@
         'چپترلید فرانت‌اند',
       ];
       return {
+        showSuccessMessage: false,
+        form: {
+          email: '',
+          subject: '',
+          message: '',
+        },
         tab: 'about-me',
         title: 'علی اسماعیلی',
         subtitles,
@@ -450,16 +496,19 @@
     methods: {
       formSubmitted() {
         const templateParams = {
-          name: 'James',
-          message: 'Check this out!',
+          ...this.form,
           accessToken: '3c2e26b0d6f5931847db819770596d10',
-          subject: 'hey subject',
-          from_name: 'mammad',
-          from_email: 'mammad@gmail.com',
         };
         send('service_4f1wkk4', 'template_io22kod', templateParams)
           .then((response) => {
             console.log('SUCCESS!', response.status, response.text);
+            this.form = {
+              email: '',
+              subject: '',
+              message: '',
+            };
+            this.showSuccessMessage = true;
+            setTimeout(() => (this.showSuccessMessage = false), 5000);
           })
           .catch((err) => console.error(err));
       },
