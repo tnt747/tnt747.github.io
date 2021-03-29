@@ -100,16 +100,11 @@
           ]"
         >
           <div :class="['relative rounded', $style.profilePictureWrapper]">
-            <img
-              src="/images/me.jpg"
-              width="100%"
-              height="auto"
-              alt="ali
-            esmaeili"
-            />
+            <img :src="profileImg" width="100%" height="auto" :alt="title" />
           </div>
           <div class="mt-8 text-center font-bold text-2xl">
             {{ title }}
+            <span class="text-3xl" v-html="titleEmoji"></span>
           </div>
           <div class="mt-3 text-center text-green-500" style="min-height: 24px">
             {{ subtitleTyping }}
@@ -198,16 +193,13 @@
             </div>
             <div class="flex flex-col md:flex-row">
               <div :class="['text-justify p-8']">
-                <p class="text-gray-600">
-                  من علی اسماعیلی هستم. <br />
-                  یک فرانت‌اند دولوپر از ایران.
-                  <br />
-                  در حال حاضر در شرکت یکتانت مشغول به کار هستم.
-                </p>
+                <p class="text-gray-600" v-html="aboutMeParagraph"></p>
               </div>
               <div :class="['p-8 relative flex-grow', $style.gutterGradiant]">
                 <ul>
                   <li
+                    v-for="item in profileTips"
+                    :key="item.label"
                     :class="[
                       'flex justify-between items-center py-2 relative',
                       $style.centerEllipsisGradiantGutter,
@@ -215,54 +207,12 @@
                   >
                     <small>
                       <strong
-                        class="px-2 bg-green-500 rounded text-start text-white"
-                      >
-                        سن
-                      </strong>
-                    </small>
-                    <span class="text-gray-600 fanum pr-2">29</span>
-                  </li>
-                  <li
-                    :class="[
-                      'flex justify-between items-center relative py-2',
-                      $style.centerEllipsisGradiantGutter,
-                    ]"
-                  >
-                    <small>
-                      <strong
-                        class="px-2 bg-green-500 rounded text-start text-white"
-                      >
-                        محل اقامت
-                      </strong>
-                    </small>
-                    <span class="text-gray-600 pr-2">ایران</span>
-                  </li>
-                  <li
-                    :class="[
-                      'flex justify-between items-center relative py-2',
-                      $style.centerEllipsisGradiantGutter,
-                    ]"
-                  >
-                    <small>
-                      <strong
                         class="px-2 bg-green-500 rounded text-start text-white whitespace-nowrap"
                       >
-                        وضعیت اشتغال
+                        {{ item.label }}
                       </strong>
                     </small>
-                    <span class="text-gray-600 pr-2">مشغول </span>
-                  </li>
-                  <li
-                    :class="['flex justify-between items-center relative py-2']"
-                  >
-                    <small>
-                      <strong
-                        class="px-2 bg-green-500 rounded text-start text-white"
-                      >
-                        آدرس
-                      </strong>
-                    </small>
-                    <span class="text-gray-600 pr-2">تهران</span>
+                    <span class="text-gray-600 pr-2">{{ item.value }}</span>
                   </li>
                 </ul>
               </div>
@@ -285,77 +235,22 @@
               <span class="font-semibold text-lg"> کاری/شغلی </span>
             </div>
             <div
+              v-for="item in workExpriences"
+              :key="item.name"
               :class="[
                 'p-8 flex flex-col md:flex-row items-center justify-start relative',
                 $style.centerEllipsisGradiantGutter,
               ]"
             >
               <a
-                href="https://yektanet.com"
+                :href="item.website"
                 target="_blank"
-                class="flex flex-col justify-between items-center ml-3"
+                class="flex flex-col justify-between items-center ml-3 w-10"
               >
-                <img
-                  src="/images/logo/yektanet.png"
-                  class="rounded w-8"
-                  alt="yektanet"
-                />
-                <span class="mt-2"> یکتانت </span>
-                <small> yektanet.com </small>
+                <img :src="item.logo" class="rounded w-8" :alt="item.name" />
+                <span class="mt-2"> {{ item.name }} </span>
               </a>
-              <p>
-                از سال ۹۵ وارد مجموعه یکتانت شدم و اولین کارهام رو مثل تقریباً
-                همه روی پروژه‌ای انجام دادم که هیچ‌وقت به مرحله Production
-                نرسید:دی. اون پروژه که اسمش
-                <strong> چطور پرو </strong>
-                بود یه پنل حرفه‌ای برای
-                <a
-                  href="https://chetor.com"
-                  class="text-green-500 underline"
-                  target="_blank"
-                >
-                  وبسایت چطور
-                </a>
-                بود.
-                <br />
-                بعد از اون همزمان کار روی پروژه‌های
-                <a
-                  href="https://najva.com"
-                  class="text-green-500 underline"
-                  target="_blank"
-                >
-                  نجوا
-                </a>
-                و
-                <a
-                  href="https://yektanet.com"
-                  class="text-green-500 underline"
-                  target="_blank"
-                >
-                  یکتانت
-                </a>
-                رو شروع کردیم و من هم عضو تیم اولیه این پروژه‌ها بودم و کدهای
-                اولیه این پروژه‌ها با جاوااسکریپت رو پیاده‌سازی کردم. <br />
-                بعد‌ترها پنل‌هامون رو که با jquery زده بودیم رو با vue بازنویسی
-                کردیم و کلی امکانات جذاب بهشون اضافه کردیم. <br />
-                پروژه‌های مختلفی مثل
-                <a
-                  href="https://triboon.net"
-                  class="text-green-500 underline"
-                  target="_blank"
-                >
-                  تریبون
-                </a>
-                و
-                <a
-                  href="https://jaryan.net"
-                  class="text-green-500 underline"
-                  target="_blank"
-                >
-                  جریان
-                </a>
-                و ... رو شروع کردیم و در حال حاضر روی پروژه تریبون کار می‌کنم.
-              </p>
+              <p v-html="item.description"></p>
             </div>
             <div class="bg-blue-100"></div>
           </div>
@@ -377,10 +272,11 @@
             </div>
             <div class="p-8">
               <p>
-                <i class="fa fa-phone"></i>
-                <span class="fanum">09202062826</span>
+                <a :href="`tel:${phoneNumber}`" class="fanum">
+                  <i class="fa fa-phone"></i> {{ phoneNumber }}</a
+                >
               </p>
-              <form action="" method="post">
+              <form id="contact-me-form" action="" method="post">
                 <h3 class="my-3 rounded p-3 bg-blue-100">
                   می‌تونی برام یه پیام بفرستی تا از طریق ایمیل با هم در ارتباط
                   باشیم.
@@ -489,14 +385,9 @@
 </i18n>
 <script>
   import { init, send } from 'emailjs-com';
+  import { ProfileCard } from '~/assets/my-cv';
   export default {
     data() {
-      const subtitles = [
-        'برنامه‌نویس',
-        'توسعه دهنده فرانت‌اند',
-        'تیم‌لید',
-        'چپترلید فرانت‌اند',
-      ];
       return {
         showSuccessMessage: false,
         form: {
@@ -505,32 +396,17 @@
           message: '',
         },
         tab: 'about-me',
-        title: 'علی اسماعیلی',
-        subtitles,
-        socials: [
-          {
-            network: 'telegram',
-            link: 'https://t.me/aesmaeili777/',
-          },
-          {
-            network: 'instagram',
-            link: 'https://www.instagram.com/a.esmaeili/',
-          },
-          {
-            network: 'twitter',
-            link: 'https://twitter.com/aliesmaeili747/',
-          },
-          {
-            network: 'linkedin',
-            link: 'https://www.linkedin.com/in/ali-esmaeili/',
-          },
-          {
-            network: 'github',
-            link: 'https://github.com/designy',
-          },
-        ],
+        title: ProfileCard.name,
+        titleEmoji: ProfileCard.emoji,
+        profileTips: ProfileCard.aboutMeTip,
+        profileImg: ProfileCard.imgSrc,
+        phoneNumber: ProfileCard.phoneNumber,
+        workExpriences: ProfileCard.workExpriences,
+        aboutMeParagraph: ProfileCard.aboutMeParagraph,
+        subtitles: ProfileCard.sentencesAbout,
+        socials: ProfileCard.socials,
         subtitleCounter: 1,
-        subtitleTyping: subtitles[0],
+        subtitleTyping: ProfileCard.sentencesAbout[0],
       };
     },
     computed: {
@@ -555,6 +431,11 @@
     },
     methods: {
       formSubmitted() {
+        const formEl = document.querySelector('#contact-me-form');
+        formEl.checkValidity();
+        if (!formEl.validity) {
+          return;
+        }
         const templateParams = {
           ...this.form,
           accessToken: '3c2e26b0d6f5931847db819770596d10',
