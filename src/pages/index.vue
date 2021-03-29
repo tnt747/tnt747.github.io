@@ -15,101 +15,109 @@
       </ul>
     </div>
     <div
-      class="container mx-auto max-w-screen-xl md:max-w-screen-lg h-4/6 relative flex"
+      class="container mx-auto max-w-screen-xl md:max-w-screen-lg lg:h-5/6 xl:h-4/6 h-full relative flex flex-col lg:flex-row"
     >
-      <div class="top-menu ml-2 z-30 top-4 relative w-20">
-        <a
-          :class="[$style.menuBtn]"
-          href=""
-          class="bg-white w-full px-2 py-8 text-center inline-block rounded hover:text-green-500 relative h-20"
-        >
-          <span></span>
-        </a>
-        <ul
-          :class="[
-            'flex flex-col bg-white items-center rounded',
-            $style.topMenuUl,
-          ]"
-        >
-          <li class="px-2 py-4 text-center w-full relative">
-            <a
-              href=""
-              class="hover:text-green-500"
-              @click.prevent="tab = 'about-me'"
-            >
-              <i class="fa fa-user-tie"></i>
-              <small class="whitespace-nowrap block">درباره من</small>
-            </a>
-          </li>
-          <li class="px-2 py-4 text-center w-full relative">
-            <a
-              href=""
-              class="hover:text-green-500"
-              @click.prevent="tab = 'my-resume'"
-            >
-              <i class="fa fa-file-alt"></i>
-              <small class="whitespace-nowrap block"> رزومه من </small>
-            </a>
-          </li>
-          <li class="px-2 py-4 text-center w-full relative">
-            <a
-              href=""
-              class="hover:text-green-500"
-              @click.prevent="tab = 'my-works'"
-            >
-              <i class="fa fa-paint-brush"></i>
-              <small class="whitespace-nowrap block">کارهای من</small>
-            </a>
-          </li>
-          <li class="px-2 py-4 text-center w-full relative">
-            <a
-              href=""
-              class="hover:text-green-500"
-              @click.prevent="tab = 'contact'"
-            >
-              <i class="far fa-at"></i>
-              <small class="whitespace-nowrap block">ارتباط با من</small>
-            </a>
-          </li>
-        </ul>
+      <div
+        class="top-menu lg:ml-2 z-30 lg:top-4 lg:relative lg:w-20 lg:h-auto fixed w-full max-h-20 h-20"
+      >
+        <div class="flex lg:flex-col h-full">
+          <a
+            :class="[$style.menuBtn, 'w-20']"
+            href=""
+            class="bg-white lg:w-full w-20 px-2 py-8 text-center inline-block lg:rounded hover:text-green-500 relative h-20 lg:h-auto"
+          >
+            <span></span>
+          </a>
+          <ul
+            :class="[
+              'flex lg:flex-col flex-1 bg-white items-center lg:rounded lg:mt-2',
+              $style.topMenuUl,
+            ]"
+          >
+            <li class="px-2 py-4 text-center w-full h-full relative">
+              <a
+                href=""
+                class="hover:text-green-500"
+                @click.prevent="tab = 'about-me'"
+              >
+                <i class="fa fa-user-tie"></i>
+                <small class="whitespace-nowrap block">درباره من</small>
+              </a>
+            </li>
+            <li class="px-2 py-4 text-center w-full h-full relative">
+              <a
+                href=""
+                class="hover:text-green-500"
+                @click.prevent="tab = 'my-resume'"
+              >
+                <i class="fa fa-file-alt"></i>
+                <small class="whitespace-nowrap block"> رزومه من </small>
+              </a>
+            </li>
+            <li class="px-2 py-4 text-center w-full h-full relative">
+              <a
+                href=""
+                class="hover:text-green-500"
+                @click.prevent="tab = 'my-works'"
+              >
+                <i class="fa fa-paint-brush"></i>
+                <small class="whitespace-nowrap block">کارهای من</small>
+              </a>
+            </li>
+            <li class="px-2 py-4 text-center w-full h-full relative">
+              <a
+                href=""
+                class="hover:text-green-500"
+                @click.prevent="tab = 'contact'"
+              >
+                <i class="far fa-at"></i>
+                <small class="whitespace-nowrap block">ارتباط با من</small>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="relative w-2/5">
+      <div class="lg:w-2/5 relative w-full mt-20 lg:mt-0">
         <div
-          :class="['h-full w-full rounded z-10', $style.profileShadow]"
+          :class="[
+            'h-full w-full rounded z-10 hidden sm:block',
+            $style.profileShadow,
+          ]"
         ></div>
 
         <div
           :class="[
-            'bg-white h-full rounded shadow-2xl relative z-20',
+            'bg-white h-full rounded shadow-2xl relative z-20 flex flex-col justify-between',
             $style.profileCard,
           ]"
         >
-          <div
-            :class="['relative h-1/2 rounded', $style.profilePictureWrapper]"
-          ></div>
+          <div :class="['relative rounded', $style.profilePictureWrapper]">
+            <img
+              src="/images/me.jpg"
+              width="100%"
+              height="auto"
+              alt="ali
+            esmaeili"
+            />
+          </div>
           <div class="mt-8 text-center font-bold text-2xl">
             {{ title }}
           </div>
           <div class="mt-3 text-center text-green-500" style="min-height: 24px">
             {{ subtitleTyping }}
           </div>
-          <div class="mt-4 flex justify-center">
+          <div class="my-3 h-16 flex justify-between items-center">
             <a
               v-for="item in socials"
               :key="item.network"
               :href="item.link"
-              class="mx-4 hover:text-green-500"
+              class="mx-4 flex-grow hover:text-green-500 flex justify-center items-center"
             >
               <i :class="`fab fa-${item.network}`"></i>
             </a>
           </div>
-          <div class="absolute bottom-0 right-0 w-full h-16">
-            <div
-              :class="[
-                'flex h-full justify-center items-center',
-                $style.profileFooterButtons,
-              ]"
-            >
+          <div :class="['w-full h-16 relative', $style.profileFooterButtons]">
+            <div :class="['flex h-full justify-center items-center']">
               <div
                 class="relative h-full flex-1 flex justify-center items-center"
               >
@@ -140,16 +148,33 @@
         </div>
       </div>
 
-      <div :class="[' w-3/5 my-4 relative overflow-hidden', $style.innerCard]">
+      <div
+        :class="[
+          'lg:w-3/5 w-full my-4 relative lg:overflow-x-hidden',
+          $style.innerCard,
+        ]"
+      >
         <transition
           name="innerCardTransition"
-          enter-active-class="animate__animated animate__fadeInRight"
-          leave-active-class="animate__animated animate__fadeOutRight"
+          :enter-active-class="`animate__animated 
+            ${
+              ['lg', 'xl', '2xl'].includes($screen.breakpoint)
+                ? 'animate__fadeInRight'
+                : 'animate__fadeIn'
+            }
+          `"
+          :leave-active-class="`animate__animated 
+          ${
+            ['lg', 'xl', '2xl'].includes($screen.breakpoint)
+              ? 'animate__fadeOutRight'
+              : 'animate__fadeOut'
+          }
+          `"
         >
           <div
             v-if="aboutmeTab"
             key="aboutme"
-            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute overflow-auto"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full lg:absolute lg:overflow-auto"
           >
             <div :class="['text-start p-8 pb-0', $style.title]">
               <span
@@ -162,8 +187,8 @@
               </span>
               <span class="font-semibold text-lg"> من </span>
             </div>
-            <div class="flex">
-              <div :class="['w-1/2 text-justify p-8']">
+            <div class="flex flex-col md:flex-row">
+              <div :class="['text-justify p-8']">
                 <p class="text-gray-600">
                   من علی اسماعیلی هستم. <br />
                   یک فرانت‌اند دولوپر از ایران.
@@ -171,7 +196,7 @@
                   در حال حاضر در شرکت یکتانت مشغول به کار هستم.
                 </p>
               </div>
-              <div :class="['w-1/2 p-8 relative', $style.gutterGradiant]">
+              <div :class="['p-8 relative flex-grow', $style.gutterGradiant]">
                 <ul>
                   <li
                     :class="[
@@ -181,22 +206,22 @@
                   >
                     <small>
                       <strong
-                        class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
+                        class="px-2 bg-green-500 rounded text-start text-white"
                       >
                         سن
                       </strong>
                     </small>
-                    <span class="text-gray-600">سن فقط یه عدده:دی</span>
+                    <span class="text-gray-600 fanum">4</span>
                   </li>
                   <li
                     :class="[
-                      'flex justify-between items-center relative py-2 relative',
+                      'flex justify-between items-center relative py-2',
                       $style.centerEllipsisGradiantGutter,
                     ]"
                   >
                     <small>
                       <strong
-                        class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
+                        class="px-2 bg-green-500 rounded text-start text-white"
                       >
                         محل اقامت
                       </strong>
@@ -205,25 +230,25 @@
                   </li>
                   <li
                     :class="[
-                      'flex justify-between items-center relative py-2 relative',
+                      'flex justify-between items-center relative py-2',
                       $style.centerEllipsisGradiantGutter,
                     ]"
                   >
                     <small>
                       <strong
-                        class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
+                        class="px-2 bg-green-500 rounded text-start text-white whitespace-nowrap"
                       >
                         وضعیت اشتغال
                       </strong>
                     </small>
-                    <span class="text-gray-600">مشغول به کار</span>
+                    <span class="text-gray-600">مشغول </span>
                   </li>
                   <li
                     :class="['flex justify-between items-center relative py-2']"
                   >
                     <small>
                       <strong
-                        class="pr-2 pl-8 bg-green-500 rounded text-start text-white"
+                        class="px-2 bg-green-500 rounded text-start text-white"
                       >
                         آدرس
                       </strong>
@@ -237,7 +262,7 @@
           <div
             v-else-if="myResumeTab"
             key="myresume"
-            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute overflow-auto"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full lg:absolute lg:overflow-auto"
           >
             <div :class="['text-start p-8 pb-0', $style.title]">
               <span
@@ -252,13 +277,13 @@
             </div>
             <div
               :class="[
-                'p-8 flex items-center justify-start relative',
+                'p-8 flex flex-col md:flex-row items-center justify-start relative',
                 $style.centerEllipsisGradiantGutter,
               ]"
             >
               <a
                 href="https://yektanet.com"
-                class="flex flex-col justify-center items-center ml-3"
+                class="flex flex-col justify-between items-center ml-3"
               >
                 <img
                   src="/images/logo/yektanet.png"
@@ -307,7 +332,7 @@
           <div
             v-else-if="contactTab"
             key="contact"
-            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute overflow-auto"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full lg:absolute lg:overflow-auto"
           >
             <div :class="['text-start p-8 pb-0', $style.title]">
               <span
@@ -399,7 +424,7 @@
           <div
             v-else-if="myWorksTab"
             key="my-works"
-            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full absolute overflow-auto"
+            class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full lg:absolute overflow-auto"
           >
             <div :class="['text-start p-8 pb-0', $style.title]">
               <span
@@ -535,14 +560,22 @@
   };
 </script>
 <style module lang="scss">
-  @mixin gutterGradiant($ellipsis) {
+  @mixin gutterGradiant($ellipsis, $horizontal: true) {
     &::after {
       content: '';
       position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
+      @if $horizontal {
+        right: 0;
+        top: 100%;
+        width: 100%;
+        height: 1px;
+      } @else {
+        right: 100%;
+        top: 0;
+        width: 1px;
+        height: 100%;
+      }
+
       background: radial-gradient(
         ellipse at $ellipsis,
         #ddd 0%,
@@ -552,9 +585,6 @@
   }
   .centerEllipsisGradiantGutter {
     @include gutterGradiant(center);
-  }
-  .innerCard {
-    height: calc(100% - 2rem);
   }
   .title {
     .firstWord {
@@ -614,11 +644,6 @@
   }
   .profilePictureWrapper {
     overflow: hidden;
-    background-image: url('/images/me.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    border-radius: 0.25rem;
     &::after {
       content: '';
       width: 100%;
@@ -674,19 +699,10 @@
   }
 
   .topMenuUl {
-    li {
-      &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 1px;
-        background: radial-gradient(
-          ellipse at left,
-          #ddd 0%,
-          rgba(255, 255, 255, 0) 70%
-        );
+    li:not(:last-child) {
+      @include gutterGradiant(bottom, $horizontal: false);
+      @screen lg {
+        @include gutterGradiant(left);
       }
     }
   }
