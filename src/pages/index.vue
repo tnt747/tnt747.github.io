@@ -41,7 +41,9 @@
                 @click.prevent="tab = 'about-me'"
               >
                 <i class="fa fa-user-tie"></i>
-                <small class="whitespace-nowrap block">درباره من</small>
+                <small class="whitespace-nowrap block">
+                  {{ $t('About') }}
+                </small>
               </a>
             </li>
             <li class="px-2 py-4 text-center w-full h-full relative">
@@ -51,7 +53,9 @@
                 @click.prevent="tab = 'my-resume'"
               >
                 <i class="fa fa-file-alt"></i>
-                <small class="whitespace-nowrap block"> رزومه من </small>
+                <small class="whitespace-nowrap block">
+                  {{ $t('Resume') }}
+                </small>
               </a>
             </li>
             <li class="px-2 py-4 text-center w-full h-full relative">
@@ -61,7 +65,9 @@
                 @click.prevent="tab = 'my-works'"
               >
                 <i class="fa fa-paint-brush"></i>
-                <small class="whitespace-nowrap block">کارهای من</small>
+                <small class="whitespace-nowrap block">
+                  {{ $t('Works') }}
+                </small>
               </a>
             </li>
             <li class="px-2 py-4 text-center w-full h-full relative">
@@ -71,7 +77,9 @@
                 @click.prevent="tab = 'contact'"
               >
                 <i class="far fa-at"></i>
-                <small class="whitespace-nowrap block">ارتباط با من</small>
+                <small class="whitespace-nowrap block">
+                  {{ $t('Contact') }}
+                </small>
               </a>
             </li>
           </ul>
@@ -211,7 +219,7 @@
                         سن
                       </strong>
                     </small>
-                    <span class="text-gray-600 fanum">4</span>
+                    <span class="text-gray-600 fanum pr-2">29</span>
                   </li>
                   <li
                     :class="[
@@ -226,7 +234,7 @@
                         محل اقامت
                       </strong>
                     </small>
-                    <span class="text-gray-600">ایران</span>
+                    <span class="text-gray-600 pr-2">ایران</span>
                   </li>
                   <li
                     :class="[
@@ -241,7 +249,7 @@
                         وضعیت اشتغال
                       </strong>
                     </small>
-                    <span class="text-gray-600">مشغول </span>
+                    <span class="text-gray-600 pr-2">مشغول </span>
                   </li>
                   <li
                     :class="['flex justify-between items-center relative py-2']"
@@ -253,7 +261,7 @@
                         آدرس
                       </strong>
                     </small>
-                    <span class="text-gray-600">تهران</span>
+                    <span class="text-gray-600 pr-2">تهران</span>
                   </li>
                 </ul>
               </div>
@@ -449,7 +457,12 @@
 <i18n lang="json">
 {
   "en": {},
-  "fa": {}
+  "fa": {
+    "About": "درباره من",
+    "Resume": "رزومه من",
+    "Works": "کارهای من",
+    "Contact": "ارتباط با من"
+  }
 }
 </i18n>
 <script>

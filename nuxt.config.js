@@ -74,14 +74,10 @@ export default {
     defaultDirection: 'rtl',
     vueI18nLoader: true,
     vueI18n: {
-      fallbackLocale: 'fa',
+      fallbackLocale: 'en',
       messages: {
-        en: {
-          welcome: 'Welcome',
-        },
-        fa: {
-          welcome: 'Bienvenue',
-        },
+        en: {},
+        fa: {},
       },
     },
   },
