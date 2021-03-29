@@ -121,7 +121,7 @@
               :href="item.link"
               class="mx-4 flex-grow hover:text-green-500 flex justify-center items-center"
             >
-              <i :class="`fab fa-${item.network}`"></i>
+              <i :class="`fab fa-2x fa-${item.network}`"></i>
             </a>
           </div>
           <div :class="['w-full h-16 relative', $style.profileFooterButtons]">
