@@ -119,6 +119,7 @@
               v-for="item in socials"
               :key="item.network"
               :href="item.link"
+              target="_blank"
               class="mx-4 flex-grow hover:text-green-500 flex justify-center items-center"
             >
               <i :class="`fab fa-2x fa-${item.network}`"></i>
@@ -291,6 +292,7 @@
             >
               <a
                 href="https://yektanet.com"
+                target="_blank"
                 class="flex flex-col justify-between items-center ml-3"
               >
                 <img
@@ -307,17 +309,29 @@
                 نرسید:دی. اون پروژه که اسمش
                 <strong> چطور پرو </strong>
                 بود یه پنل حرفه‌ای برای
-                <a href="https://chetor.com" class="text-green-500 underline">
+                <a
+                  href="https://chetor.com"
+                  class="text-green-500 underline"
+                  target="_blank"
+                >
                   وبسایت چطور
                 </a>
                 بود.
                 <br />
                 بعد از اون همزمان کار روی پروژه‌های
-                <a href="https://najva.com" class="text-green-500 underline">
+                <a
+                  href="https://najva.com"
+                  class="text-green-500 underline"
+                  target="_blank"
+                >
                   نجوا
                 </a>
                 و
-                <a href="https://yektanet.com" class="text-green-500 underline">
+                <a
+                  href="https://yektanet.com"
+                  class="text-green-500 underline"
+                  target="_blank"
+                >
                   یکتانت
                 </a>
                 رو شروع کردیم و من هم عضو تیم اولیه این پروژه‌ها بودم و کدهای
@@ -325,11 +339,19 @@
                 بعد‌ترها پنل‌هامون رو که با jquery زده بودیم رو با vue بازنویسی
                 کردیم و کلی امکانات جذاب بهشون اضافه کردیم. <br />
                 پروژه‌های مختلفی مثل
-                <a href="https://triboon.net" class="text-green-500 underline">
+                <a
+                  href="https://triboon.net"
+                  class="text-green-500 underline"
+                  target="_blank"
+                >
                   تریبون
                 </a>
                 و
-                <a href="https://jaryan.net" class="text-green-500 underline">
+                <a
+                  href="https://jaryan.net"
+                  class="text-green-500 underline"
+                  target="_blank"
+                >
                   جریان
                 </a>
                 و ... رو شروع کردیم و در حال حاضر روی پروژه تریبون کار می‌کنم.
