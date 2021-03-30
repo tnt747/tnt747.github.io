@@ -1,12 +1,49 @@
-export const ProfileCard = {
+export const getters = {
+  aboutMeTips: (state) => state.aboutMeTips,
+  workExperiences: (state) => state.workExperiences,
+  aboutMeParagraph: (state) => state.aboutMeParagraph,
+  phoneNumber: (state) => state.phoneNumber,
+  socials: (state) => state.socials,
+  name: (state) => state.name,
+  emoji: (state) => state.emoji,
+  image: (state) => state.image,
+  aboutMeSentences: (state) => state.aboutMeSentences,
+};
+
+export const mutations = {
+  // setUserInfo(state, data) {
+  //   for (const [key, value] of Object.entries(data)) {
+  //     state.info[key] = value;
+  //   }
+  // },
+};
+
+export const actions = {
+  // setUserInfo({ commit }, data) {
+  //   commit('setUserInfo', data);
+  // },
+  // setUserBalance({ commit }) {
+  //   userBalanceInfoAPI()
+  //     .then(response => {
+  //       const { data } = response;
+  //       if (data) {
+  //         commit('setUserInfo', { balance: data.balance });
+  //       }
+  //     })
+  //     .catch(e => {
+  //       console.error(e);
+  //     });
+  // },
+};
+export const state = () => ({
   name: 'علی اسماعیلی',
-  imgSrc: '/images/me.jpg',
+  image: '/images/me.jpg',
   emoji: '&#127828',
-  sentencesAbout: [
+  aboutMeSentences: [
     'برنامه‌نویس',
     'توسعه دهنده فرانت‌اند',
-    'تیم‌لید',
     'چپترلید فرانت‌اند',
+    'تیم‌لید',
   ],
   aboutMeParagraph: `
   من علی اسماعیلی هستم. <br />
@@ -14,7 +51,7 @@ export const ProfileCard = {
   <br />
   در حال حاضر در شرکت یکتانت مشغول به کار هستم.
 `,
-  aboutMeTip: [
+  aboutMeTips: [
     {
       label: 'سن',
       value: '۲۹',
@@ -33,7 +70,7 @@ export const ProfileCard = {
     },
   ],
   phoneNumber: '09202062826',
-  workExpriences: [
+  workExperiences: [
     {
       logo: '/images/logo/yektanet.png',
       name: 'یکتانت',
@@ -99,8 +136,8 @@ export const ProfileCard = {
       description: `
       شروع کارم رو در قالب کارآموزی با شرکت عرش گذروندم و بعد از اون چون دوست داشتم بیشتر یاد بگیرم حدود ۱.۵ سال باهمدیگه همکاری کردیم.
       <br>
-       بعد از یادگیری پایتون و جنگو، توی پروژه‌های 
-       
+       بعد از یادگیری پایتون و جنگو، توی پروژه‌های
+
        <a
        href="https://baadoom.ir/"
        class="text-green-500 underline"
@@ -134,4 +171,4 @@ export const ProfileCard = {
       link: 'https://github.com/designy',
     },
   ],
-};
+});
