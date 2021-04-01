@@ -24,6 +24,7 @@
           <a
             :class="[$style.menuBtn, 'w-20']"
             href="#"
+            aria-label="menu"
             class="bg-white lg:w-full w-20 px-2 py-8 text-center inline-block lg:rounded hover:text-green-500 relative h-20 lg:h-auto"
           >
             <span></span>
@@ -45,6 +46,7 @@
                   'hover:text-green-500',
                   { 'text-green-500': tab.component === currentTab },
                 ]"
+                :aria-label="$t(tab.label)"
                 @click.prevent="changeTab(tab.component)"
               >
                 <i :class="tab.icon"></i>

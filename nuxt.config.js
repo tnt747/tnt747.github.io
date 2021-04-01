@@ -8,7 +8,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'وب‌سایت شخصی علی اسماعیلی | جایی برای به اشتراک‌گذاری تجربه‌ها و یادگیری فرانت‌اند',
+      },
     ],
 
     link: [
@@ -20,6 +25,30 @@ export default {
       {
         rel: 'preload',
         href: '/fonts/woff2/IRANSansWeb.woff2',
+        as: 'font',
+        crossorigin: 'anonymous',
+      },
+      {
+        rel: 'preload',
+        href: '/fonts/woff2/IRANSansWeb_Bold.woff2',
+        as: 'font',
+        crossorigin: 'anonymous',
+      },
+      {
+        rel: 'preload',
+        href: '/fonts/fontawesome/webfonts/fa-solid-900.woff2',
+        as: 'font',
+        crossorigin: 'anonymous',
+      },
+      {
+        rel: 'preload',
+        href: '/fonts/fontawesome/webfonts/fa-regular-400.woff2',
+        as: 'font',
+        crossorigin: 'anonymous',
+      },
+      {
+        rel: 'preload',
+        href: '/fonts/fontawesome/webfonts/fa-brands-400.woff2',
         as: 'font',
         crossorigin: 'anonymous',
       },
