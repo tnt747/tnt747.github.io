@@ -14,13 +14,13 @@
       ]"
     >
       <div :class="['relative rounded', $style.profilePictureWrapper]">
-        <img :src="image" width="100%" height="auto" :alt="name" />
+        <img :src="image" width="600" height="400" :alt="name" />
       </div>
       <div class="mt-8 text-center font-bold text-2xl">
         {{ name }}
         <span class="text-3xl" v-html="emoji"></span>
       </div>
-      <div class="mt-3 text-center text-green-500" style="min-height: 24px">
+      <div class="mt-3 text-center text-green-800 h-6">
         {{ aboutMeSentencesTyping }}
       </div>
       <div class="my-3 h-16 flex justify-between items-center">
@@ -29,6 +29,8 @@
           :key="item.network"
           :href="item.link"
           target="_blank"
+          :aria-label="item.network"
+          rel="noopener"
           class="mx-4 flex-grow hover:text-green-500 flex justify-center items-center"
         >
           <i :class="`fab fa-2x fa-${item.network}`"></i>

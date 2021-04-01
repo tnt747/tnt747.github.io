@@ -23,7 +23,7 @@
         <div class="flex lg:flex-col h-full">
           <a
             :class="[$style.menuBtn, 'w-20']"
-            href=""
+            href="#"
             class="bg-white lg:w-full w-20 px-2 py-8 text-center inline-block lg:rounded hover:text-green-500 relative h-20 lg:h-auto"
           >
             <span></span>

@@ -2,7 +2,7 @@
   <div
     class="bg-white rounded rounded-tr-none rounded-br-none h-full w-full lg:absolute lg:overflow-auto"
   >
-    <heading-title first-word="برای ارتباط با" another-words="من" />
+    <heading-title first-word="ارتباط" another-words="با من" />
 
     <div class="p-8">
       <p>

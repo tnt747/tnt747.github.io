@@ -18,8 +18,20 @@ export default {
         href: '/styles/font.css',
       },
       {
+        rel: 'preload',
+        href: '/fonts/woff2/IRANSansWeb.woff2',
+        as: 'font',
+        crossorigin: 'anonymous',
+      },
+      {
         rel: 'stylesheet',
         href: '/fonts/fontawesome/css/all.min.css',
+      },
+      {
+        rel: 'preload',
+        href: '/fonts/fontawesome/css/all.min.css',
+        as: 'style',
+        crossorigin: 'anonymous',
       },
     ],
   },
@@ -83,8 +95,22 @@ export default {
   },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta: {
+      name: 'aliii',
+      description: 'وب‌سایت شخصی علی اسماعیلی',
+      lang: 'fa',
+      theme_color: '#34D399',
+    },
     manifest: {
-      lang: 'en',
+      name: 'aliii.ir',
+      short_name: 'aliii',
+      description: 'وب‌سایت شخصی علی اسماعیلی',
+      dir: 'rtl',
+      display: 'standalone',
+      lang: 'fa',
+      // gcm_sender_id: '103953800507',
+      background_color: '#fff',
+      theme_color: '#34D399',
     },
   },
 

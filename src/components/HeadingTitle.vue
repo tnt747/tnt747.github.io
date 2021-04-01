@@ -2,7 +2,7 @@
   <div :class="['text-start p-8 pb-0', $style.title]">
     <span
       :class="[
-        'text-green-500 font-semibold inline-block mb-8 text-lg relative',
+        'text-green-800 font-semibold inline-block mb-8 text-lg relative',
         $style.firstWord,
       ]"
     >

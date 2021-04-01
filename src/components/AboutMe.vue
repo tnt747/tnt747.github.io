@@ -16,7 +16,7 @@
           >
             <small>
               <strong
-                class="px-2 bg-green-500 rounded text-start text-white whitespace-nowrap"
+                class="px-2 bg-green-800 rounded text-start text-white whitespace-nowrap"
               >
                 {{ item.label }}
               </strong>

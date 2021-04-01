@@ -13,7 +13,13 @@
         target="_blank"
         class="flex flex-col justify-between items-center ml-3 w-10"
       >
-        <img :src="item.logo" class="rounded w-8" :alt="item.name" />
+        <img
+          :src="item.logo"
+          width="150"
+          height="150"
+          class="rounded w-8"
+          :alt="item.name"
+        />
         <span class="mt-2"> {{ item.name }} </span>
       </a>
       <p v-html="item.description"></p>
