@@ -27,12 +27,6 @@ export default {
         rel: 'stylesheet',
         href: '/fonts/fontawesome/css/all.min.css',
       },
-      {
-        rel: 'preload',
-        href: '/fonts/fontawesome/css/all.min.css',
-        as: 'style',
-        crossorigin: 'anonymous',
-      },
     ],
   },
   srcDir: 'src',
