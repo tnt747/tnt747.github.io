@@ -36,7 +36,9 @@
       </div>
       <div :class="['w-full h-16 relative', $style.profileFooterButtons]">
         <div :class="['flex h-full justify-center items-center']">
-          <div class="relative h-full flex-1 flex justify-center items-center">
+          <div
+            class="relative h-full flex-1 flex justify-center items-center topEllipsisGradiantGutter"
+          >
             <a
               href=""
               class="text-center hover:text-green-500"
@@ -45,12 +47,7 @@
               رزومه
             </a>
           </div>
-          <div
-            :class="[
-              'relative h-full flex-1 flex justify-center items-center',
-              $style.gutterGradiant,
-            ]"
-          >
+          <div class="relative h-full flex-1 flex justify-center items-center">
             <a
               href=""
               class="text-center text-green-500 hover:text-green-700"

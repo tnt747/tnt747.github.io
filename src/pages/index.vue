@@ -151,22 +151,6 @@
     }
   }
 
-  .gutterGradiant {
-    &::before {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 1px;
-      height: 100%;
-      background: radial-gradient(
-        ellipse at top,
-        #ddd 0%,
-        rgba(255, 255, 255, 0) 70%
-      );
-    }
-  }
-
   .topMenuUl {
     li:not(:last-child) {
       @include gutterGradiant(bottom, $horizontal: false);
