@@ -53,10 +53,6 @@ export const state = () => ({
 `,
   aboutMeTips: [
     {
-      label: 'سن',
-      value: '۲۹',
-    },
-    {
       label: 'محل اقامت',
       value: 'ایران',
     },
